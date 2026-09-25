@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acerca de - IoT World</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- encabezado principal -->
+  <header class="encabezado">
+    <div class="contenedor barra-navegacion">
+      <a href="index.html" class="logotipo">
+        <img src="../img/logo.jpg" alt="logo iot world" class="imagen-logo">
+        <span>IoT World</span>
+      </a>
+      <nav>
+        <ul class="menu-navegacion">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acerca.html" class="activo">Acerca de</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- introduccion acerca de -->
+  <section class="seccion-acerca-intro">
+    <div class="contenedor">
+      <h1>Fundamentos y Evolucion del Internet de las Cosas</h1>
+      <p>Un analisis detallado sobre la arquitectura tecnica, los protocolos de comunicacion, la evolucion historica y los desafios que impulsan al ecosistema de dispositivos inteligentes.</p>
+    </div>
+  </section>
+
+  <!-- seccion arquitectura del iot -->
+  <section class="seccion-mision">
+    <div class="contenedor fila-mision">
+      <div class="mision-texto">
+        <h2>Arquitectura del IoT: ¿Como Funciona?</h2>
+        <p>
+          Un ecosistema IoT no es simplemente un dispositivo conectado a internet; es una compleja arquitectura distribuida que integra hardware embebido, pasarelas de enlace (gateways), protocolos de comunicacion de bajo consumo y plataformas de procesamiento analitico.
+        </p>
+        <p style="margin-top: 1rem;">
+          Los sensores recopilan variables fisicas como temperatura, vibracion, flujo o bioseñales, las transforman en datos binarios estructurados y las transmiten en milisegundos hacia servidores locales de borde (edge) o centros de datos en la nube. De este modo, se habilitan respuestas automaticas en actuadores fisicos y se generan paneles de control en tiempo real para optimizar procesos criticos.
+        </p>
+      </div>
+      <div class="mision-imagen">
+        <img src="../img/portada.jpg" alt="arquitectura iot" class="imagen-seccion">
+      </div>
+    </div>
+  </section>
+
+  <!-- seccion cuatro capas del iot -->
+  <section class="seccion-arquitectura">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <h2>Las 4 Capas Fundamentales del Modelo IoT</h2>
+        <p>Estructura modular estandarizada que permite la comunicacion fluida entre el mundo fisico y digital.</p>
+      </div>
+
+      <div class="cuadricula-capas">
+        <article class="tarjeta-capa">
+          <h3>1. Capa de Percepcion y Deteccion</h3>
+          <p>
+            Constituye el punto de contacto con el entorno fisico real. Esta compuesta por sensores (termopares, acelerometros, giroscopios, ultrasonido) y microcontroladores de bajo consumo (ESP32, STM32, nRF52) que digitalizan y acondicionan las señales electricas.
+          </p>
+        </article>
+
+        <article class="tarjeta-capa">
+          <h3>2. Capa de Red y Conectividad</h3>
+          <p>
+            Responsable del enrutamiento de paquetes hacia el exterior mediante pasarelas (gateways). Emplea protocolos optimizados para ancho de banda reducido y ahorro de energia, tales como LoRaWAN, Zigbee, Bluetooth Mesh, NB-IoT y redes de ultra baja latencia 5G.
+          </p>
+        </article>
+
+        <article class="tarjeta-capa">
+          <h3>3. Capa de Procesamiento y Middleware</h3>
+          <p>
+            Filtra, limpia y valida millones de mensajes entrantes. Implementa Edge Computing para tomar decisiones instantaneas sin conexion a internet, y plataformas de Cloud Computing para almacenamiento masivo, ingesta de telemetria y orquestacion de eventos.
+          </p>
+        </article>
+
+        <article class="tarjeta-capa">
+          <h3>4. Capa de Aplicacion y Analitica</h3>
+          <p>
+            Es la capa visible para los ingenieros y usuarios. Procesa la informacion mediante modelos de inteligencia artificial y machine learning, generando cuadros de mando predictivos, sistemas de alerta temprana y automatizaciones en cadenas industriales.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- seccion historia del iot -->
+  <section class="seccion-historia">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <h2>Historia y Evolucion Cronologica del IoT</h2>
+        <p>De las primeras identificaciones por radiofrecuencia a la inteligencia artificial distribuida.</p>
+      </div>
+
+      <table class="tabla-historia">
+        <thead>
+          <tr>
+            <th>Año</th>
+            <th>Hito Tecnologico Clave</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1999</strong></td>
+            <td>Kevin Ashton acuña formalmente el termino "Internet of Things" en el MIT Auto-ID Center durante un proyecto sobre etiquetas RFID aplicadas a la cadena de suministro de Procter & Gamble.</td>
+          </tr>
+          <tr>
+            <td><strong>2008</strong></td>
+            <td>Punto de inflexion historico: el numero de objetos fisicos conectados a la red supera oficialmente a la poblacion humana en el planeta (aproximadamente 6.8 mil millones de dispositivos segun Cisco IBSG).</td>
+          </tr>
+          <tr>
+            <td><strong>2011</strong></td>
+            <td>Lanzamiento masivo de IPv6, proporcionando 340 sextillones de direcciones IP unicas, lo que elimino el cuello de botella que representaba el agotamiento de direcciones en IPv4.</td>
+          </tr>
+          <tr>
+            <td><strong>2014</strong></td>
+            <td>El consorcio internacional OASIS aprueba y estandariza formalmente MQTT como el estandar de mensajeria ligera para IoT. Al mismo tiempo, Google adquiere Nest Labs impulsando la domotica comercial.</td>
+          </tr>
+          <tr>
+            <td><strong>2020</strong></td>
+            <td>La pandemia global exige la implementacion de telemetria medica remota (IoMT), monitorizacion hospitalaria continua y logistica sensorizada para cadenas de suministro farmaceuticas.</td>
+          </tr>
+          <tr>
+            <td><strong>2024</strong></td>
+            <td>Madurez de Edge AI y TinyML: los microcontroladores son capaces de ejecutar redes neuronales optimizadas directamente en el sensor, reduciendo la dependencia total de la nube.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- seccion tecnologias clave -->
+  <section class="seccion-tecnologias">
+    <div class="contenedor fila-tecnologias">
+      <div class="tecnologias-texto">
+        <h2>Tecnologias y Protocolos Clave</h2>
+        <p>
+          La robustez del Internet de las Cosas reside en el uso de estandares de comunicacion disenados especificamente para entornos con restricciones de energia, memoria y ancho de banda:
+        </p>
+        <ul class="lista-tecnologias">
+          <li><strong>Protocolo MQTT (Message Queuing Telemetry Transport):</strong> Patron de diseño publicador/suscriptor sobre TCP con cabeceras minimas de 2 bytes, ideal para redes inestables y satelitales.</li>
+          <li><strong>Protocolo CoAP (Constrained Application Protocol):</strong> Equivalente ligero a HTTP basado en UDP, diseñado para microcontroladores con recursos extremadamente reducidos.</li>
+          <li><strong>Redes LPWAN (LoRaWAN y Sigfox):</strong> Permiten cobertura de radio de hasta 15 kilometros con baterias de sensores que duran entre 5 y 10 años sin recarga.</li>
+          <li><strong>Redes Celulares IoT (NB-IoT y LTE-M):</strong> Operan sobre frecuencias licenciadas de telecomunicaciones brindando excelente penetracion en sotanos y zonas rurales.</li>
+          <li><strong>Plataformas Cloud Especializadas:</strong> Herramientas como AWS IoT Core, Azure IoT Hub y brokers de alto rendimiento (Mosquitto, EMQX) gestionan millones de conexiones concurrentes.</li>
+        </ul>
+      </div>
+
+      <div class="tecnologias-imagen">
+        <img src="../img/keyTech.jpg" alt="tecnologias clave" class="imagen-seccion">
+      </div>
+    </div>
+  </section>
+
+  <!-- seccion desafios del iot -->
+  <section class="seccion-beneficios">
+    <div class="contenedor">
+      <div class="encabezado-seccion">
+        <h2>Principales Desafios del Ecosistema IoT</h2>
+        <p>Obstaculos tecnicos y de seguridad que la industria debe resolver para un despliegue masivo y seguro.</p>
+      </div>
+
+      <div class="cuadricula-tarjetas">
+        <article class="tarjeta">
+          <h3>Ciberseguridad y Vulnerabilidades</h3>
+          <p>
+            Muchos nodos IoT carecen de potencia de computo para cifrado complejo o no reciben actualizaciones periodicas de firmware, lo que puede convertirlos en vectores de ataque para botnets masivas.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Interoperabilidad y Estandares</h3>
+          <p>
+            La existencia de decenas de fabricantes con protocolos propietarios dificulta la integracion entre marcas. Iniciativas abiertas como Matter buscan unificar la compatibilidad universal en dispositivos.
+          </p>
+        </article>
+
+        <article class="tarjeta">
+          <h3>Gestion y Privacidad de Datos</h3>
+          <p>
+            La recoleccion ininterrumpida de audio, ubicacion y biometria requiere cumplir normativas estrictas de proteccion de datos (como RGPD) para garantizar la privacidad y el consentimiento del usuario.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- nota complementaria sobre estandarizacion con aside -->
+  <aside class="nota-complementaria" aria-label="organismos de estandarizacion">
+    <div class="contenedor">
+      <div class="caja-nota">
+        <h3>Consorcios y Estandares Internacionales de IoT</h3>
+        <p>
+          La interoperabilidad global del Internet de las Cosas esta respaldada por entidades normativas como la <strong>IEEE</strong> (estandares IEEE 802.15.4 para redes de sensores de baja potencia), el <strong>IETF</strong> (protocolos CoAP y 6LoWPAN), la <strong>ITU-T</strong> (marcos regulatorios de telecomunicacion) y la <strong>Connectivity Standards Alliance (CSA)</strong>, creadores del estandar universal <strong>Matter</strong> para la integracion fluida entre fabricantes.
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- pie de pagina -->
+  <footer class="pie-pagina">
+    <div class="contenedor cuadricula-pie">
+      <div class="columna-pie">
+        <h4>IoT World</h4>
+        <ul class="mini-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <ul class="redes-pie">
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="columna-pie texto-parcial">
+        Parcial #1 de Ingenieria web, Universidad Tecnologica de Panama
+      </div>
+
+      <div class="columna-pie">
+        <ul class="lista-autores">
+          <li>-Jose Tristan</li>
+          <li>-Jafet Gonzalez</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

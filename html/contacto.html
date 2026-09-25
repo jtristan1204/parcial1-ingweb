@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - IoT World</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- encabezado principal -->
+  <header class="encabezado">
+    <div class="contenedor barra-navegacion">
+      <a href="index.html" class="logotipo">
+        <img src="../img/logo.jpg" alt="logo iot world" class="imagen-logo">
+        <span>IoT World</span>
+      </a>
+      <nav>
+        <ul class="menu-navegacion">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+          <li><a href="contacto.html" class="activo">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- introduccion contacto -->
+  <section class="seccion-acerca-intro">
+    <div class="contenedor">
+      <h1>Contactanos</h1>
+      <p>Estamos aqui para responder tus preguntas sobre IoT. Completa el formulario y te responderemos a la brevedad.</p>
+    </div>
+  </section>
+
+  <!-- seccion contenido de contacto -->
+  <section class="seccion-contacto">
+    <div class="contenedor fila-contacto">
+      
+      <!-- formulario de contacto -->
+      <article class="tarjeta-formulario">
+        <h2>Formulario de Contacto</h2>
+
+        <form action="/enviar-contacto" method="POST">
+          <div class="grupo-campo">
+            <label for="nombre">Nombre completo *</label>
+            <input 
+              type="text" 
+              id="nombre" 
+              name="nombre" 
+              class="campo-control" 
+              placeholder="Ej. Juan Perez" 
+              required 
+              minlength="3"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="correo">Correo electronico *</label>
+            <input 
+              type="email" 
+              id="correo" 
+              name="correo" 
+              class="campo-control" 
+              placeholder="Ej. correo@dominio.com" 
+              required
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="asunto">Asunto *</label>
+            <select id="asunto" name="asunto" class="campo-control" required>
+              <option value="" disabled selected>Selecciona una opcion...</option>
+              <option value="Consulta General">Consulta General</option>
+              <option value="Colaboracion Academica">Colaboracion Academica</option>
+              <option value="Propuesta de Proyecto">Propuesta de Proyecto</option>
+              <option value="Soporte y Preguntas">Soporte y Preguntas</option>
+            </select>
+          </div>
+
+          <div class="grupo-campo">
+            <label for="mensaje">Mensaje *</label>
+            <textarea 
+              id="mensaje" 
+              name="mensaje" 
+              class="campo-control" 
+              rows="5" 
+              placeholder="Escribe tu mensaje aqui..." 
+              required 
+              minlength="10"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="boton-principal">Enviar Mensaje</button>
+        </form>
+      </article>
+
+      <!-- informacion lateral y mapa -->
+      <aside class="tarjeta-info-contacto">
+        <h2>Informacion de Contacto</h2>
+        <p style="color: var(--color-texto-secundario); margin-bottom: 1.5rem; font-size: 0.95rem;">
+          Si tienes dudas o propuestas de colaboracion, puedes ponerte en contacto directamente con nosotros a traves de los siguientes canales informativos.
+        </p>
+
+        <div class="item-info">
+          <strong>Correo Electronico</strong>
+          <p>quandale.dingle@utp.ac.pa</p>
+        </div>
+
+        <div class="item-info">
+          <strong>Telefono</strong>
+          <p>+1 267 767 867</p>
+        </div>
+
+        <div class="item-info">
+          <strong>Direccion</strong>
+          <p>Vía España, Edificio Obarrio 50, Apartado 4B, Ciudad de Panamá</p>
+        </div>
+
+        <div class="seccion-mapa-hub">
+          <h3>Ubicacion del Hub de Innovacion</h3>
+          <iframe 
+            class="mapa-interactivo"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-79.5400%2C8.9800%2C-79.5100%2C9.0000&amp;layer=mapnik" 
+            title="Mapa del Hub de Innovacion">
+          </iframe>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- pie de pagina -->
+  <footer class="pie-pagina">
+    <div class="contenedor cuadricula-pie">
+      <div class="columna-pie">
+        <h4>IoT World</h4>
+        <ul class="mini-menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="acerca.html">Acerca de</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+        <ul class="redes-pie">
+          <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="columna-pie texto-parcial">
+        Parcial #1 de Ingenieria web, Universidad Tecnologica de Panama
+      </div>
+
+      <div class="columna-pie">
+        <ul class="lista-autores">
+          <li>-Jose Tristan</li>
+          <li>-Jafet Gonzalez</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
