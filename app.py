@@ -85,12 +85,25 @@ def recibir_contacto():
                         Gracias <strong>{{ nombre }}</strong>, tus datos han sido guardados correctamente en <code>mensajes.json</code>.
                     </p>
                     <a href="/html/contacto.html" class="boton-principal" style="margin-right: 0.5rem;">Volver a Contacto</a>
+                    <a href="/ver-mensajes" class="boton-principal" style="background: #0f766e; margin-right: 0.5rem;" target="_blank">Ver mensajes.json</a>
                     <a href="/" class="boton-principal" style="background: #475569;">Ir al Inicio</a>
                 </div>
             </div>
         </body>
         </html>
     ''', nombre=nombre)
+
+# ruta para consultar los mensajes guardados en formato json
+@app.route('/ver-mensajes')
+def ver_mensajes():
+    if os.path.exists(archivo_datos):
+        try:
+            with open(archivo_datos, 'r', encoding='utf-8') as f:
+                datos = json.load(f)
+            return json.dumps(datos, ensure_ascii=False, indent=2), 200, {'Content-Type': 'application/json; charset=utf-8'}
+        except Exception:
+            return json.dumps([], ensure_ascii=False), 200, {'Content-Type': 'application/json; charset=utf-8'}
+    return json.dumps([], ensure_ascii=False), 200, {'Content-Type': 'application/json; charset=utf-8'}
 
 # iniciar servidor
 if __name__ == '__main__':
