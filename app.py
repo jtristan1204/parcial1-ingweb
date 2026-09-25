@@ -41,6 +41,8 @@ def recibir_contacto():
 
     # validacion basica en el servidor
     if not nombre or not correo or not asunto or not mensaje:
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return {'exito': False, 'error': 'campos_incompletos'}, 400
         return redirect('/html/contacto.html?error=campos_incompletos')
 
     nuevo_registro = {
@@ -67,31 +69,11 @@ def recibir_contacto():
     with open(archivo_datos, 'w', encoding='utf-8') as f:
         json.dump(datos, f, ensure_ascii=False, indent=2)
 
-    # confirmacion visual sencilla
-    return render_template_string('''
-        <!DOCTYPE html>
-        <html lang="es">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Mensaje Recibido - IoT World</title>
-            <link rel="stylesheet" href="../css/style.css">
-        </head>
-        <body>
-            <div class="contenedor" style="padding: 4rem 1rem; text-align: center; max-width: 600px;">
-                <div style="background: white; border: 1px solid var(--color-borde); padding: 2.5rem; border-radius: 8px;">
-                    <h2 style="color: var(--color-primario); margin-bottom: 1rem;">¡Mensaje Enviado con Exito!</h2>
-                    <p style="color: var(--color-texto-secundario); margin-bottom: 1.5rem;">
-                        Gracias <strong>{{ nombre }}</strong>, tus datos han sido guardados correctamente en <code>mensajes.json</code>.
-                    </p>
-                    <a href="/html/contacto.html" class="boton-principal" style="margin-right: 0.5rem;">Volver a Contacto</a>
-                    <a href="/ver-mensajes" class="boton-principal" style="background: #0f766e; margin-right: 0.5rem;" target="_blank">Ver mensajes.json</a>
-                    <a href="/" class="boton-principal" style="background: #475569;">Ir al Inicio</a>
-                </div>
-            </div>
-        </body>
-        </html>
-    ''', nombre=nombre)
+    # respuesta en json para solicitudes asincronas o redireccion a contacto
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        return {'exito': True, 'mensaje': 'guardado con exito'}, 200
+
+    return redirect('/html/contacto.html?enviado=1')
 
 # ruta para consultar los mensajes guardados en formato json
 @app.route('/ver-mensajes')

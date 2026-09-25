@@ -41,7 +41,9 @@
       <article class="tarjeta-formulario">
         <h2>Formulario de Contacto</h2>
 
-        <form action="/enviar-contacto" method="POST">
+        <div id="alerta-envio" class="alerta-exito" style="display: none;"></div>
+
+        <form id="formulario-contacto" action="/enviar-contacto" method="POST">
           <div class="grupo-campo">
             <label for="nombre">Nombre completo *</label>
             <input 
@@ -159,6 +161,56 @@
       </div>
     </div>
   </footer>
+
+  <!-- script para senalizacion temporal de envio -->
+  <script>
+    const form = document.getElementById('formulario-contacto');
+    const alerta = document.getElementById('alerta-envio');
+
+    if (form && alerta) {
+      form.addEventListener('submit', async function (evento) {
+        evento.preventDefault();
+        const boton = form.querySelector('button[type="submit"]');
+        boton.disabled = true;
+        boton.textContent = 'Enviando...';
+
+        try {
+          const datos = new FormData(form);
+          const respuesta = await fetch('/enviar-contacto', {
+            method: 'POST',
+            body: datos,
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest'
+            }
+          });
+
+          if (respuesta.ok) {
+            form.reset();
+            alerta.textContent = '¡Mensaje enviado con exito! Se ha guardado correctamente.';
+            alerta.style.display = 'block';
+            setTimeout(function () {
+              alerta.style.display = 'none';
+            }, 4000);
+          } else {
+            alerta.textContent = 'Por favor completa todos los campos requeridos.';
+            alerta.style.display = 'block';
+            setTimeout(function () {
+              alerta.style.display = 'none';
+            }, 4000);
+          }
+        } catch (error) {
+          alerta.textContent = 'Error al conectar con el servidor. Intenta nuevamente.';
+          alerta.style.display = 'block';
+          setTimeout(function () {
+            alerta.style.display = 'none';
+          }, 4000);
+        } finally {
+          boton.disabled = false;
+          boton.textContent = 'Enviar Mensaje';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
